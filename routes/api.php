@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/status', 'Api\ContatoController@status')->name('api.status');
+
+Route::prefix('contatos')->group( function() {
+    Route::namespace('Api')->group( function() {
+        Route::post('/cadastro', 'ContatoController@store');
+    });
+});
