@@ -21,6 +21,9 @@ Route::get('/status', 'Api\ContatoController@status')->name('api.status');
 
 Route::prefix('contatos')->group( function() {
     Route::namespace('Api')->group( function() {
-        Route::post('/cadastro', 'ContatoController@store');
+        Route::post('/store', 'ContatoController@store');
+        
+        Route::get('/', 'ContatoController@list');
+        Route::get('/{id}', 'ContatoController@select');
     });
 });

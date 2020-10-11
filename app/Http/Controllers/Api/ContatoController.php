@@ -30,4 +30,18 @@ class ContatoController extends Controller
             return ['retorno'=>'error', 'details'=>$err];
         }
     }
+
+    public function list()
+    {
+        $contato = Contato::all('id', 'nome');
+
+        return $contato;
+    }
+
+    public function select($id)
+    {
+        $contato = Contato::find($id);
+
+        return $contato;
+    }
 }
