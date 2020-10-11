@@ -28,5 +28,7 @@ Route::prefix('contatos')->group( function() {
 
         Route::put('/{id}', 'ContatoController@update');
 
+        Route::delete('/{id}', 'ContatoController@destroy');
+
     });
 });

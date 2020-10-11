@@ -61,4 +61,18 @@ class ContatoController extends Controller
             return ['retorno'=>'Error', 'details'=>$err];
         }
     }
+
+    public function destroy($id)
+    {
+        try {
+            $contato = Contato::find($id);
+
+            $contato->delete();
+
+            return ['retorno'=>'Contato deletado com sucesso'];
+        } catch (\Exception $err) {
+            return ['retorno'=>'error', 'details'=>$err];
+        }
+    }
+
 }
