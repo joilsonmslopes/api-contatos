@@ -25,5 +25,8 @@ Route::prefix('contatos')->group( function() {
         
         Route::get('/', 'ContatoController@list');
         Route::get('/{id}', 'ContatoController@select');
+
+        Route::put('/{id}', 'ContatoController@update');
+
     });
 });
